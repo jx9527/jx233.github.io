@@ -2,80 +2,297 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
   
-  <title>Hexo</title>
+  
+  
+  
+  <title>hexo+github博客搭建(超级详细) | TraveleSite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="继硬盘坏掉后再一次搭建博客，(心累~~),选择一个markdown编辑器下载，我用的是markdownpad2,专业版可以附上本地照片，收费的~，win10安装后编辑器会有一个无法显示的bug,在markdown官网有解决问题的方案，(下载…sdk).1.搭建环境  大概可以分为以下三步： Node.js 的安装和准备 Git 的安装和准备 gitHub 账户的配置  (1)配置Node.js环境">
+  <meta name="description" content="继硬盘坏掉后再一次搭建博客，(心累~~)">
+<meta name="keywords" content="网站,博客搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="hexo+github博客搭建(超级详细)">
 <meta property="og:url" content="http://yoursite.com/2017/10/01/loading/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="继硬盘坏掉后再一次搭建博客，(心累~~),选择一个markdown编辑器下载，我用的是markdownpad2,专业版可以附上本地照片，收费的~，win10安装后编辑器会有一个无法显示的bug,在markdown官网有解决问题的方案，(下载…sdk).1.搭建环境  大概可以分为以下三步： Node.js 的安装和准备 Git 的安装和准备 gitHub 账户的配置  (1)配置Node.js环境">
-<meta property="og:updated_time" content="2017-09-30T16:41:05.869Z">
+<meta property="og:site_name" content="TraveleSite">
+<meta property="og:description" content="继硬盘坏掉后再一次搭建博客，(心累~~)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-04T15:12:59.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="继硬盘坏掉后再一次搭建博客，(心累~~),选择一个markdown编辑器下载，我用的是markdownpad2,专业版可以附上本地照片，收费的~，win10安装后编辑器会有一个无法显示的bug,在markdown官网有解决问题的方案，(下载…sdk).1.搭建环境  大概可以分为以下三步： Node.js 的安装和准备 Git 的安装和准备 gitHub 账户的配置  (1)配置Node.js环境">
+<meta name="twitter:title" content="hexo+github博客搭建(超级详细)">
+<meta name="twitter:description" content="继硬盘坏掉后再一次搭建博客，(心累~~)">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
+    <link rel="alternative" href="/atom.xml" title="TraveleSite" type="application/atom+xml">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/img/favicon.jpg">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-
 <body>
   <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Mr.Jin</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">一个小网站</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/">分类</a></li>
+                        
+                            <li><a  href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/jx9527" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5732795875/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                            
+                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=d0NORUNBT0dORTcGBlkUGBo" title="mail">mail</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/网站/" style="font-size: 20px;">网站</a>
+                    </div>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Mr.Jin</a></h1>
       </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Mr.Jin</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">一个小网站</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/jx9527" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/5732795875/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=d0NORUNBT0dORTcGBlkUGBo" title="mail">mail</a>
+                    
+                </div>
+            </nav>
+        </header>                
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-loading" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/01/loading/" class="article-date">
-  <time datetime="2017-10-01T00:55:52.279Z" itemprop="datePublished">2017-10-01</time>
+</nav>
+      <div class="body-wrap"><article id="post-loading" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/10/01/loading/" class="article-date">
+      <time datetime="2017-10-01T00:55:52.279Z" itemprop="datePublished">2017-10-01</time>
 </a>
-    
-  </div>
+
+    </div>
+  
   <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo+github博客搭建(超级详细)
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Web应用层/">Web应用层</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客搭建/">博客搭建</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站/">网站</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>继硬盘坏掉后再一次搭建博客，(心累~~),<br>选择一个markdown编辑器下载，我用的是markdownpad2,专业版可以附上本地照片，收费的~，win10安装后编辑器会有一个无法显示的bug,在markdown官网有解决问题的方案，(下载…sdk).<br>1.搭建环境<br>  大概可以分为以下三步：</p>
+          
+        <p>选择一个markdown编辑器下载，我用的是markdownpad2,专业版可以附上本地照片，收费的~，win10安装后编辑器会有一个无法显示的bug,在markdown官网有解决问题的方案，(下载…sdk).<br>1.搭建环境<br>  大概可以分为以下三步：</p>
 <p>Node.js 的安装和准备</p>
 <p>Git 的安装和准备</p>
 <p>gitHub 账户的配置<br>  (1)配置Node.js环境</p>
@@ -111,108 +328,279 @@ cd Hexo
 <p>hexo g<br>然后输入：</p>
 <p>hexo s<br>然后会提示：</p>
 <p>INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.<br>在浏览器中打开 <a href="http://localhost:4000，你将会看到：" target="_blank" rel="external">http://localhost:4000，你将会看到：</a><br>到目前为止，Hexo在本地的配置已经全都结束了。<br>5.将本地博客与github连接起来<br>   在这里就要用到gitbash命令窗口了<br> (1)配置Git个人信息<br>   什么意思？<br>   在管理git项目上，有https url 和 ssh url两种方法将本地项目和仓库连接起来.<br>   用https url方法 每次获取和提交代码时都需要输入账号和密码，非常不方便。<br>   利用ssh url则只需输入一次就可以。<br>   下面是如何配置使用ssh方式来提交和克隆代码<br>   设置Git的user name和email：(如果是第一次的话)<br> 大概可以分为以下几个步骤：</p>
-<p>  生成密钥<br>  添加密钥到ssh-agent<br>  登陆Github, 添加 ssh<br>  测试：<br>   /设置 Git 的 user name 和 email：<br>     git config –global user.name “hhhh”<br>     git config –global user.email “hhhh@qq.com”<br>   /检查是否已经有SSH Key<br>    cd ~/.ssh<br>   接着输<br>     ls<br>   看是否存在 id_isa 和 id_isa.pub 文件（也可以是别的文件名，只要 yourName 和 yourName.pub 承兑存在<br>   否则<br>   /生成密钥<br>     ssh-keygen -t rsa -C “hhhh@qq.com”<br>   最后得到了两个文件：id_rsa和id_rsa.pub。<br>   默认存储路径为：C:\Users\Administrator.ssh<br>   /添加密钥到ssh-agent<br>   eval “$(ssh-agent -s)”<br>   添加生成的 SSH key 到 ssh-agent<br>   ssh-add ~/.ssh/id_rsa<br>   /登陆github,添加ssh<br>   把id_rsa.pub文件里的内容复制到你所建仓库settings中的ssh keys中<br>   /测试<br>   ssh -T git@github.com<br>   如果看到Hi后面是你的用户名，就说明成功了。<br> (2)配置Deployment<br>   同样在 _config.yml 文件中，找到 Deployment，然后按照如下修改：<br>6.写博客发文章  （写博客看看git有没有什么便捷的方法）<br>   先在博客的根目录下安装插件：npm install hexo-deployer-git –save<br>   新建一篇博客，执行下面的命令：</p>
+<p>  生成密钥<br>  添加密钥到ssh-agent<br>  登陆Github, 添加 ssh<br>  测试：<br>   /设置 Git 的 user name 和 email：<br>     git config –global user.name “hhhh”<br>     git config –global user.email “hhhh@qq.com”<br>   /检查是否已经有SSH Key<br>    cd ~/.ssh<br>   接着输<br>     ls<br>   看是否存在 id_isa 和 id_isa.pub 文件（也可以是别的文件名，只要 yourName 和 yourName.pub 承兑存在<br>   否则<br>   /生成密钥<br>     ssh-keygen -t rsa -C “hhhh@qq.com”<br>   最后得到了两个文件：id_rsa和id_rsa.pub。<br>   默认存储路径为：C:\Users\Administrator.ssh<br>   /添加密钥到ssh-agent<br>   eval “$(ssh-agent -s)”<br>   添加生成的 SSH key 到 ssh-agent<br>   ssh-add ~/.ssh/id_rsa<br>   /登陆github,添加ssh<br>   把id_rsa.pub文件里的内容复制到你所建仓库settings中的ssh keys中<br>   /测试<br>   ssh -T git@github.com<br>   如果看到Hi后面是你的用户名，就说明成功了。<br> (2)配置Deployment<br>   同样在 _config.yml 文件中，找到 Deployment，然后按照如下修改：<br>6.写博客发文章  （写博客看看git有没有什么便捷的方法）  </p>
+<p>   新建一篇博客，执行下面的命令：</p>
 <pre><code>hexo new post &quot;article title&quot;
 </code></pre><p>   用MarDown编辑器打开就可以编辑文章了。文章编辑好之后，运行生成、部署命令：</p>
 <pre><code>hexo g // 生成
 hexo d // 部署
-</code></pre><p>部署成功后访问你的地址 <a href="https://yourName.github.io，将可以看到生成的文章。" target="_blank" rel="external">https://yourName.github.io，将可以看到生成的文章。</a></p>
+</code></pre><p>部署成功后访问你的地址 <a href="https://yourName.github.io，将可以看到生成的文章。" target="_blank" rel="external">https://yourName.github.io，将可以看到生成的文章。</a><br>    踩坑提醒：<br>    hexo d 会报错 缺少git…..<br>    先在博客的根目录下安装插件：npm install hexo-deployer-git –save（注意这个时候用gitbash命令窗口进入博客根目录安装）</p>
 <p>7.主题 [哈哈 这个才是重头戏，后面我会作为一篇或几篇文章总结，陆续更新…..]</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/01/loading/" data-id="cj881nl8f00012cuwxfh1tbim" class="article-share-link">Share</a>
-      
-      
-    </footer>
+    
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/10/01/loading/">hexo+github博客搭建(超级详细)</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Mr.Jin 的个人博客">Mr.Jin</a></p>
+        <p><span>发布时间:</span>2017年10月01日 - 08时55分</p>
+        <p><span>最后更新:</span>2017年10月04日 - 23时12分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/01/loading/" title="hexo+github博客搭建(超级详细)">http://yoursite.com/2017/10/01/loading/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/10/01/loading/　　作者: Mr.Jin" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
 <nav id="article-nav">
   
   
-    <a href="/2017/09/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+    <a  href="/2017/09/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
     </a>
   
 </nav>
 
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cyt1joFr5',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
 </section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/09/30/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-  </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/01/loading/">hexo+github博客搭建(超级详细)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/30/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/10/01/loading/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/30/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+
+    <script>
         
-      </div>
+    </script>
+
+</div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Mr.Jin
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-  </div>
 </footer>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
 
 
-<script src="/js/script.js"></script>
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
 
   </div>
 </body>
